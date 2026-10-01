@@ -1,5 +1,5 @@
 {
-    "name": "psy1903",
+    "name": "test-web-page",
     "scripts": {
         "start": "nodemon --watch server.js --verbose server.js"
     },
