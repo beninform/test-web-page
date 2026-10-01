@@ -1,0 +1,1004 @@
+{
+  "source": "/Users/bev/Downloads/Intra-op-Script-v12.docx",
+  "table_count": 1,
+  "tables": [
+    {
+      "table_index": 0,
+      "headers": [
+        "ID",
+        "Context / Step",
+        "Description",
+        "Type",
+        "Required data",
+        "Notes"
+      ],
+      "row_count": 128,
+      "rows": [
+        {
+          "ID": "PHASE A - Placement of Ipsilateral Wire and Contralateral Catheter"
+        },
+        {
+          "ID": "A-A00",
+          "Context / Step": "procedure_start",
+          "Description": "Let's begin by setting up the ipsilateral and contralateral femoral access.",
+          "Type": "Alert",
+          "Required data": "Procedure started event.",
+          "Notes": "procedure_start.mp3"
+        },
+        {
+          "ID": "A-S01",
+          "Context / Step": "Femoral Arterial Access",
+          "Description": "Ultrasound-guided retrograde bilateral femoral access. 6Fr introducer, double Proglide prepositioning per side, 10 Fr sheath.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Suitable navigational wires, eg, J-tip guidewires, advanced into the abdominal aorta."
+        },
+        {
+          "ID": "A-M01",
+          "Context / Step": "Insert standard guidewire - left",
+          "Description": "Insert the standard guidewire from the left access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_family: guidewire; required_stiffness: standard; access_scope: left",
+          "Notes": "Keep left and right access distinct until the stiff guidewire establishes the ipsilateral side. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-M02",
+          "Context / Step": "Insert standard guidewire - right",
+          "Description": "Insert the standard guidewire from the right access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_family: guidewire; required_stiffness: standard; access_scope: right",
+          "Notes": "Keep left and right access distinct until the stiff guidewire establishes the ipsilateral side. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-S02",
+          "Context / Step": "Catheter insertion and advancement via the Ipsilateral Side",
+          "Description": "A suitable catheter (eg, Berenstein) is passed over the ipsilateral J-tip wire and the two are advanced into the thoracic aorta to ensure non-traumatic access.First guidewire into the thoracic aorta, then catheter.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "IMPLEMENTATION GAP: this step permits a suitable catheter (e.g. Berenstein), whereas A-M03/A-M04 currently require pigtail or marker pigtail on both sides."
+        },
+        {
+          "ID": "A-S03",
+          "Context / Step": "Contralateral Catheter Placement",
+          "Description": "A pigtail catheter is inserted via the contralateral femoral artery and over the J-tip wire and positioned with the tip curled just above the renal artery level (usually just above the L1-L2 disc space).",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "A-M03",
+          "Context / Step": "Insert pigtail catheter - left",
+          "Description": "Insert the pigtail catheter from the left access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_tool_code: Pigtail Catheter;Pigtail Marker Catheter; required_family: catheter; access_scope: left",
+          "Notes": "Confirm that the pigtail catheter is inserted from the left access. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-M04",
+          "Context / Step": "Insert pigtail catheter - right",
+          "Description": "Insert the pigtail catheter from the right access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_tool_code: Pigtail Catheter;Pigtail Marker Catheter; required_family: catheter; access_scope: right",
+          "Notes": "Confirm that the pigtail catheter is inserted from the right access. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-S04",
+          "Context / Step": "J-tip withdrawal",
+          "Description": "The J-tip wire is withdrawn from the contralateral side to prepare for angiographic planning.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "A-M05",
+          "Context / Step": "Remove standard guidewire - left",
+          "Description": "Remove the standard guidewire from the left access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_removed_after_seen; required_family: guidewire; required_stiffness: standard; access_scope: left",
+          "Notes": "Confirm withdrawal of the soft standard guidewire from the left access. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side. Removal may correspond to the contralateral withdrawal or ipsilateral exchange depending on the chosen side."
+        },
+        {
+          "ID": "A-S05",
+          "Context / Step": "Guide Wire Exchange via Ipsilateral Side",
+          "Description": "The ipsilateral J-tip wire is exchanged for a stiff guidewire (eg, Lunderquist) that will support the stent graft delivery system.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "A-M06",
+          "Context / Step": "Remove standard guidewire - right",
+          "Description": "Remove the standard guidewire from the right access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_removed_after_seen; required_family: guidewire; required_stiffness: standard; access_scope: right",
+          "Notes": "Confirm withdrawal of the soft standard guidewire from the right access. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side. Removal may correspond to the contralateral withdrawal or ipsilateral exchange depending on the chosen side."
+        },
+        {
+          "ID": "A-M07",
+          "Context / Step": "Insert stiff guidewire - establishes ipsilateral side",
+          "Description": "Insert the stiff guidewire through the future ipsilateral access before removing that pigtail catheter.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_family: guidewire; required_stiffness: stiff; access_scope: ipsilateral",
+          "Notes": "The access used for this stiff guidewire is now the ipsilateral side; leave its pigtail in place during the exchange. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-A02",
+          "Context / Step": "phase_a_stiff_wire_exchange_warning",
+          "Description": "Warning. It is safer to introduce the ipsilateral stiff guidewire through a protective catheter to reduce the risk of vessel rupture.",
+          "Type": "Alert",
+          "Required data": "This is triggered when  ipsilateral stiff-wire exchange without protective catheter evidence.",
+          "Notes": "phase_A_stiff_wire_exchange_warning.mp3"
+        },
+        {
+          "ID": "A-S06",
+          "Context / Step": "Catheter removal",
+          "Description": "The catheter is removed from the ipsilateral side, leaving the stiff (Lunderquist) wire positioned at the distal aortic arch.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "A-M08",
+          "Context / Step": "Remove pigtail catheter - ipsilateral",
+          "Description": "Remove the ipsilateral pigtail catheter after the stiff guidewire is in place.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_removed_after_seen; required_tool_code: Pigtail Catheter;Pigtail Marker Catheter; required_family: catheter; access_scope: ipsilateral",
+          "Notes": "Remove only the pigtail on the same side as the stiff guidewire after the exchange is complete. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-A01",
+          "Context / Step": "phase_a_transition",
+          "Description": "Phase A milestones have been completed. Please now review the checks list.",
+          "Type": "Alert",
+          "Required data": "Phase A milestones complete.",
+          "Notes": "phase_A_transition.mp3"
+        },
+        {
+          "ID": "A-S07",
+          "Context / Step": "C-arm positioning",
+          "Description": "C-arm movement to visualise the angulation of the lowest renal artery.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "A-C01",
+          "Context / Step": "Check vital signs for any indication of access-site rupture.",
+          "Description": "Review the patient's vital signs and overall hemodynamic trend to exclude an access-site rupture after femoral access. Tachycardia, hypotension, or other instability at this stage should prompt immediate reassessment before proceeding.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Check vital signs to rule out access-site rupture before continuing."
+        },
+        {
+          "ID": "A-C02",
+          "Context / Step": "Check for cardiac arrhythmia if any wire or catheter advances too far.",
+          "Description": "Unexpected deep advancement of a wire or catheter can enter the ventricle and trigger tachycardia or ectopy. This remains a surgeon-facing awareness prompt unless real-time vital-sign data become available from the simulator.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: If a wire or catheter advances too far, check heart rate to exclude ventricular irritation."
+        },
+        {
+          "ID": "A-C03",
+          "Context / Step": "Check that the stiff guidewire reaches the aorta or thoracic aorta only on the ipsilateral side.",
+          "Description": "This step verifies that the exchanged stiff guidewire provides stable support for the main-body delivery system. The intended result is one appropriate stiff wire in the aorta or thoracic aorta through the ipsilateral access, without an unnecessary second stiff wire.",
+          "Type": "ToolCheck",
+          "Required data": "Tool identity/family, anatomical region, multiplicity.",
+          "Notes": "Configured target is Thoracic Aorta, not any aortic region. Exact supported stiff-wire codes and multiplicity constraints apply; review side enforcement separately from the clinical intention.\u000bCheck alert: Confirm that the stiff guidewire is advanced on the intended side and remains positioned in the thoracic aorta."
+        },
+        {
+          "ID": "A-C04",
+          "Context / Step": "Check that the C-arm angle is optimised to visualise the lowest renal artery.",
+          "Description": "The C-arm view should clearly open the lowest renal artery so the proximal landing zone can be judged without ambiguity. A precise projection at this point reduces the risk of covering a renal artery or accepting an inaccurate deployment level.",
+          "Type": "CArmCheck",
+          "Required data": "Live C-arm angles; runtime-side preplanning target; configured tolerance.",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Optimize the C-arm to clearly profile the lowest renal artery before proximal positioning."
+        },
+        {
+          "ID": "A-C05",
+          "Context / Step": "Check that the pigtail catheter is placed above the renal level on the contralateral side.",
+          "Description": "The contralateral pigtail catheter should be positioned just above the renal artery level so the angiographic roadmap remains trustworthy. If it sits too low or on the wrong side, positioning decisions for the main body become less reliable.",
+          "Type": "ToolCheck",
+          "Required data": "Tool identity/family, anatomical region, multiplicity; runtime access side.",
+          "Notes": "Runtime contralateral side; supported pigtail/marker catheter in Suprarenal Region. Revalidation is configured through Phase C.\u000bCheck alert: Keep the pigtail catheter curled just above the renal level on the contralateral side to obtain a reliable roadmap."
+        },
+        {
+          "ID": "The below alerts arise when triggered during the whole procedure."
+        },
+        {
+          "ID": "A-A03",
+          "Context / Step": "safety_tool_above_subclavian",
+          "Description": "A procedural tool has moved above the subclavian artery outside the thoracic aorta. Reposition it immediately.",
+          "Type": "Alert",
+          "Required data": "Tool enters above-subclavian danger region.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Audio asset: safety_tool_above_subclavian.mp3"
+        },
+        {
+          "ID": "A-A04",
+          "Context / Step": "safety_tool_in_renal_arteries",
+          "Description": "A procedural tool has entered the renal artery region. Remove or reposition it immediately.",
+          "Type": "Alert",
+          "Required data": "Tool enters renal-artery region.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Audio asset: safety_tool_in_renal_arteries.mp3"
+        },
+        {
+          "ID": "A-A05",
+          "Context / Step": "safety_tool_in_celiac_trunk",
+          "Description": "A procedural tool has entered the celiac trunk region. Reposition it immediately.",
+          "Type": "Alert",
+          "Required data": "Tool enters celiac region.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Audio asset: safety_tool_in_celiac_trunk.mp3"
+        },
+        {
+          "ID": "A-A06",
+          "Context / Step": "safety_tool_in_superior_mesenteric",
+          "Description": "A procedural tool has entered the superior mesenteric artery region. Reposition it immediately.",
+          "Type": "Alert",
+          "Required data": "Tool enters superior-mesenteric region.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Audio asset: safety_tool_in_superior_mesenteric.mp3"
+        },
+        {
+          "ID": "A-A07",
+          "Context / Step": "safety_tool_in_danger_zone",
+          "Description": "A procedural tool has entered a dangerous critical zone. Reposition it immediately.",
+          "Type": "Alert",
+          "Required data": "Tool enters configured critical danger region.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Audio asset: safety_tool_in_danger_zone.mp3"
+        },
+        {
+          "ID": "PHASE B - Insertion and Positioning of Main Body"
+        },
+        {
+          "ID": "B-A01",
+          "Context / Step": "phase_b_initial",
+          "Description": "Let's proceed to Phase B. Select the prosthesis according to the pre-planning recommendation.",
+          "Type": "Alert",
+          "Required data": "Entry to Phase B.",
+          "Notes": "phase_B_initial.mp3"
+        },
+        {
+          "ID": "B-M01",
+          "Context / Step": "Phase B initial checks",
+          "Description": "The prosthesis-selection check is accessible at the beginning of Phase B.",
+          "Type": "Checklist availability",
+          "Required data": "rule_type: always_accessible; access_scope: any",
+          "Notes": "The prosthesis-selection check is accessible at the beginning of Phase B. Unlocks: B-C01."
+        },
+        {
+          "ID": "B-S01",
+          "Context / Step": "Stent Graft Selection",
+          "Description": "Select the main body according to the case-specific preplanning and applicable device instructions.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Removed the universal ~20% oversizing claim; case/device-specific sizing requires expert review."
+        },
+        {
+          "ID": "B-C01",
+          "Context / Step": "Check that the selected main body matches the pre-planning recommendation.",
+          "Description": "Before the delivery system is introduced, compare the selected main-body graft with the preplanning recommendation. This prevents committing to an inappropriate main-body diameter or length for the proximal and ipsilateral distal landing zones.",
+          "Type": "Preplanning check",
+          "Required data": "Selected component code and applicable preplanning code(s).",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Confirm the selected main body matches the planned prosthesis before introduction."
+        },
+        {
+          "ID": "B-A05",
+          "Context / Step": "prosthesis_selection_mismatch",
+          "Description": "The selected prosthesis does not match the pre-planning recommendation. Review the displayed recommendation before continuing.",
+          "Type": "Alert",
+          "Required data": "Selection conflicts with the applicable preplanning; actual emitted wording may be dynamic. Conditional: can recur for later component selections, not only Phase B.",
+          "Notes": "prosthesis_selection_mismatch.mp3"
+        },
+        {
+          "ID": "B-A03",
+          "Context / Step": "phase_b_mid",
+          "Description": "Begin introducing the trunk-ipsilateral main body and advance it to the aneurysm neck.",
+          "Type": "Alert",
+          "Required data": "Main-body selection and B-C01 resolved; introduce main body.",
+          "Notes": "phase_B_mid.mp3"
+        },
+        {
+          "ID": "B-S02",
+          "Context / Step": "Main Body Preparation",
+          "Description": "Thread the delivery system with the main body over the stiff guide wire (Lunderquist) on the ipsilateral side. The delivery system should be wetted before it enters the vessel to activate the hydrophilic coating.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "B-S03",
+          "Context / Step": "Main Body Introduction",
+          "Description": "Using the front grip, advance the delivery system with the main body until the proximal end markers of the stent graft are level with the proximal landing zone level below the lowest renal artery. Rotational alignment should be adjusted to ensure the contralateral limb gate will open towards the contralateral access side",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Proximal marker telemetry is implemented. Runtime unlocks B-C03/B-C04/B-C02 when the main body reaches the aneurysm neck."
+        },
+        {
+          "ID": "B-M02",
+          "Context / Step": "Unlock second part of Phase B",
+          "Description": "Unlock marker positioning, gate orientation, and contrast planning when the main body reaches the aneurysm neck.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_tool_code: Trunk-Ipsilateral Leg; required_family: prothesis; access_scope: any; required_anatomical_region: Neck of the Aneurysm",
+          "Notes": "Unlock marker positioning, gate orientation, and contrast planning when the main body reaches the aneurysm neck. Unlocks: B-C03;B-C04;B-C02."
+        },
+        {
+          "ID": "B-A04",
+          "Context / Step": "phase_b_positioning",
+          "Description": "Review the check list for proximal marker position and contralateral gate orientation.",
+          "Type": "Alert",
+          "Required data": "Main body reaches neck region and positioning block becomes available.",
+          "Notes": "phase_B_positioning.mp3"
+        },
+        {
+          "ID": "B-C03",
+          "Context / Step": "Position the proximal main-body marker immediately below the renal bifurcation.",
+          "Description": "Verify the proximal main-body marker against the configured landing window below the Renal Bifurcation. Current configured window: -10 to 0 mm; this is a software setting, not a clinical recommendation.",
+          "Type": "ToolCheck",
+          "Required data": "Main-body proximal-marker telemetry, renal reference and deployment percentage; configured tolerance.",
+          "Notes": "Live proximal-marker check. Use the configured signed window [-tolerance, 0] mm (currently [-10, 0]); CSV prose still says 3 mm. B-C03 continuous monitoring stops at 30% main-body deployment. REVIEW: runtime resolves this check before the first angiogram, while v11 placed it after angiography.\u000bCheck alert: Position the proximal marker within the configured landing window below the lowest renal artery."
+        },
+        {
+          "ID": "B-C04",
+          "Context / Step": "Check that the contralateral gate is oriented toward the contralateral access side.",
+          "Description": "Before deployment progresses, confirm that the main body is rotated so the contralateral gate opens toward the contralateral access. Correct orientation reduces difficult cannulation and unnecessary catheter manipulation later.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Manual orientation assessment; no automatic graft-rotation validation. Runtime resolves it before the first angiogram.\u000bCheck alert: Orient the contralateral gate toward the contralateral side before further deployment."
+        },
+        {
+          "ID": "B-C02",
+          "Context / Step": "Check the contrast injection rate and volume before the initial aortogram.",
+          "Description": "This is the final Phase B review before angiography. Confirm that contrast rate and volume are appropriate for adequate renal visualization while limiting unnecessary contrast load.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Verify contrast rate and volume before the first angiogram and keep the patient's renal reserve in mind."
+        },
+        {
+          "ID": "B-A02",
+          "Context / Step": "phase_b_angiography",
+          "Description": "Perform the first angiogram to visualize the renal arteries and confirm the main body position relative to the renal markers.",
+          "Type": "Alert",
+          "Required data": "Selected main body and B-C01/B-C03/B-C04/B-C02 resolved; waits for angiography evidence.",
+          "Notes": "phase_B_angiography.mp3"
+        },
+        {
+          "ID": "B-S04",
+          "Context / Step": "Initial Aortogram and Positioning",
+          "Description": "Contrast is injected to visualise the renal arteries, and image overlay is used to fine-tune positioning just below the lowest renal artery.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "CURRENT RUNTIME: initial angiography is requested after B-C01 and B-C03/B-C04/B-C02 are resolved. Review this ordering with Sara against the intended positioning workflow."
+        },
+        {
+          "ID": "PHASE C - Deployment of Main Body and Ipsilateral Limb"
+        },
+        {
+          "ID": "C-A02",
+          "Context / Step": "phase_c_start_deployment",
+          "Description": "After confirming the main body position on the angiogram, begin deployment of the trunk-ipsilateral prosthesis by turning the knob counterclockwise.",
+          "Type": "Alert",
+          "Required data": "Entry to main-body deployment after Phase B angiography.",
+          "Notes": "phase_C_start_deployment.mp3"
+        },
+        {
+          "ID": "C-S01",
+          "Context / Step": "Partial main body deployment",
+          "Description": "Begin deployment by retracting the outer sheath until the proximal covered stent rings are partially opened.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "C-A06",
+          "Context / Step": "safety_proximal_markers_above_renal",
+          "Description": "The proximal graft markers are above the renal bifurcation landmark. Reposition the main body below the renal arteries.",
+          "Type": "Alert",
+          "Required data": "Conditional during the relevant positioning/withdrawal activity; not a scheduled step. Catalogue definition for proximal marker above renal reference; automatic emission path not confirmed in current code.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Catalogue presence does not establish runtime activation. Audio asset: safety_proximal_markers_above_renal.mp3"
+        },
+        {
+          "ID": "C-S02",
+          "Context / Step": "Position and rotation adjustment",
+          "Description": "Adjust the graft position and rotation before further deployment, ensuring proximal apposition and correct contralateral gate orientation.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "This is the last phase where meaningful repositioning is still possible before definitive anchoring."
+        },
+        {
+          "ID": "C-C01",
+          "Context / Step": "Keep the proximal main-body marker in the renal landing window during deployment.",
+          "Description": "Verify the proximal main-body marker against the configured landing window below the Renal Bifurcation. Current configured window: -10 to 0 mm; this is a software setting, not a clinical recommendation.",
+          "Type": "ToolCheck",
+          "Required data": "Main-body proximal-marker telemetry, renal reference and deployment percentage; configured tolerance.",
+          "Notes": "Unlocked at 15% deployment; live proximal-marker check with configured tolerance. This does not automatically verify rotation, gate opening, anchoring or global graft stability.\u000bCheck alert: Maintain the proximal marker within the configured landing window below the renal bifurcation."
+        },
+        {
+          "ID": "C-S03",
+          "Context / Step": "Gate opening and proximal anchoring",
+          "Description": "Continue deployment until the contralateral limb gate is opened, then deploy the proximal bare stent to anchor the graft in the proximal neck.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "contralateral gate deployment and proximal bare stent deployment, because they are closely connected deployment milestones."
+        },
+        {
+          "ID": "C-S04",
+          "Context / Step": "Ipsilateral limb deployment and distal apposition",
+          "Description": "Deploy the ipsilateral limb and position the distal marker with respect to the ipsilateral iliac landing zone / iliac bifurcation.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "C-S06",
+          "Context / Step": "Apposition of the ipsilateral distal end of stent graft",
+          "Description": "Land the radio-opaque marker of the graft cover as it is retracted so that it sits 1 cm past the distal end of the graft material.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Moved before delivery-system withdrawal. Device-specific 1 cm manoeuvre retained from v11 for expert/IFU review; not validated by this code review."
+        },
+        {
+          "ID": "C-A07",
+          "Context / Step": "safety_distal_marker_below_iliac_limit",
+          "Description": "The distal main-body marker has gone below the iliac landing limit. Reposition the prosthesis above the iliac half line.",
+          "Type": "Alert",
+          "Required data": "Conditional during the relevant positioning/withdrawal activity; not a scheduled step. Catalogue only: no implemented distal-marker check in current checklist; automatic trigger not established.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Catalogue presence does not establish runtime activation. Audio asset: safety_distal_marker_below_iliac_limit.mp3"
+        },
+        {
+          "ID": "C-A05",
+          "Context / Step": "phase_c_continue_deployment",
+          "Description": "Complete the deployment of the main body.",
+          "Type": "Alert",
+          "Required data": "Continue deployment after the relevant intermediate checks; may occur at more than one checkpoint. Shown here before final completion; the same alert can also request continuation after C-C01.",
+          "Notes": "phase_C_continue_deployment.mp3"
+        },
+        {
+          "ID": "C-A01",
+          "Context / Step": "phase_c_completion",
+          "Description": "Main body deployment is complete. Withdraw the delivery system, paying attention to the final checks.",
+          "Type": "Alert",
+          "Required data": "Main-body deployment reaches 100%, before delivery-system withdrawal.",
+          "Notes": "phase_C_completion.mp3"
+        },
+        {
+          "ID": "C-S05",
+          "Context / Step": "Nose cone recapture and delivery system withdrawal",
+          "Description": "Recapture the nose cone, reunite the nose cone and graft cover, and withdraw the delivery system under fluoroscopic control while maintaining wire position.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Withdrawal is distinct from distal landing assessment; distal-marker automatic verification is not implemented."
+        },
+        {
+          "ID": "C-A08",
+          "Context / Step": "safety_stiff_guidewire_outside_thoracic",
+          "Description": "The stiff guidewire has left the thoracic aorta and entered a dangerous region. Reposition the guidewire in the thoracic aorta.",
+          "Type": "Alert",
+          "Required data": "Conditional during the relevant positioning/withdrawal activity; not a scheduled step. Monitored stiff wire leaves thoracic aorta for a configured danger region.",
+          "Notes": "Preventive alert; suppressed by current no_safety_alerts=true. Audio asset: safety_stiff_guidewire_outside_thoracic.mp3"
+        },
+        {
+          "ID": "PHASE D - Contralateral Cannulation and Main-Body Completion"
+        },
+        {
+          "ID": "D-A02",
+          "Context / Step": "phase_d_entry",
+          "Description": "Cannulate the contralateral gate and advance both the angled catheter and guidewire into the thoracic aorta.",
+          "Type": "Alert",
+          "Required data": "D-M01, D-M02 and D-M03 completed after the 50% main-body pause.",
+          "Notes": "phase_D_entry.mp3"
+        },
+        {
+          "ID": "D-S01",
+          "Context / Step": "Prepare contralateral cannulation",
+          "Description": "Withdraw the contralateral pigtail, then insert an angled catheter and a soft or stiff guidewire from the contralateral access.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "D-M01",
+          "Context / Step": "Withdraw contralateral contrast pigtail",
+          "Description": "Withdraw the contralateral Pigtail Catheter or Pigtail Marker Catheter.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_removed_after_seen; required_tool_code: Pigtail Catheter;Pigtail Marker Catheter; required_family: catheter; access_scope: contralateral",
+          "Notes": "Triggered directly by the contralateral pigtail OUT event after the 50% main-body pause."
+        },
+        {
+          "ID": "D-S02",
+          "Context / Step": "Introduce an angled catheter",
+          "Description": "Insert an angled catheter from the contralateral side for gate cannulation.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "D-A01",
+          "Context / Step": "phase_d_non_angled_catheter",
+          "Description": "An angled catheter is suggested for contralateral gate cannulation.",
+          "Type": "Alert",
+          "Required data": "Non-angled catheter encountered during contralateral cannulation.",
+          "Notes": "phase_D_non_angled_catheter.mp3"
+        },
+        {
+          "ID": "D-M02",
+          "Context / Step": "Insert angled catheter",
+          "Description": "Insert an angled catheter suitable for contralateral gate cannulation.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_tool_code: configured angled catheters; required_family: catheter; access_scope: contralateral",
+          "Notes": "Triggered directly by a valid contralateral angled-catheter IN event after D-M01."
+        },
+        {
+          "ID": "D-M03",
+          "Context / Step": "Insert contralateral guidewire",
+          "Description": "Insert a soft or stiff guidewire from the contralateral side for gate cannulation.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_family: guidewire; access_scope: contralateral",
+          "Notes": "Triggered directly by a contralateral guidewire IN event after D-M02. Once D-M01 to D-M03 are complete, D-A02 is shown."
+        },
+        {
+          "ID": "D-S03",
+          "Context / Step": "Contralateral gate cannulation",
+          "Description": "Cannulate the contralateral gate, then advance both the angled catheter and guidewire until both tips are in the thoracic aorta.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "D-S04",
+          "Context / Step": "Thoracic-aorta confirmation",
+          "Description": "When both the contralateral angled-catheter tip and guidewire tip are in the thoracic aorta, proceed to the pigtail exchange and test.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "D-S05",
+          "Context / Step": "Replace the angled catheter with a pigtail",
+          "Description": "Maintain guidewire access through the gate, withdraw the angled catheter, and insert a pigtail inside the main body for the circular pigtail test.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "D-C01",
+          "Context / Step": "Confirm true intragraft cannulation using the pigtail rotation test.",
+          "Description": "Exchange the angled catheter for a pigtail, insert the pigtail inside the main body, and perform the circular pigtail test.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Unlocks when the angled catheter and guidewire are both in the thoracic aorta. Confirm or dismiss after the manual test. Main-body deployment resumes only when the internal pigtail-position condition is also satisfied.\u000bCheck alert: Exchange the angled catheter for a pigtail, insert the pigtail inside the main body, and perform the circular pigtail test."
+        },
+        {
+          "ID": "D-C02",
+          "Context / Step": "Verify that the distal main-body landing preserves internal iliac blood flow.",
+          "Description": "The current stream does not identify the distal end of the deployed main body. Verify the distal landing manually on fluoroscopy, keeping it above the iliac half-line at the intended ipsilateral level and clear of the internal iliac origin. Do not use a wire, catheter, or proximal-tip distance as distal-marker evidence.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Phase D check. Unlocks at CC02_depl_thresh (configured at 85%) after D-C01 is resolved and main-body deployment resumes. Manual distal-landing assessment; do not substitute catheter, wire or proximal-tip position.\u000bCheck alert: Confirm the ipsilateral iliac landing is above the iliac half-line and preserves internal iliac perfusion."
+        },
+        {
+          "ID": "D-C03",
+          "Context / Step": "Check delivery-system withdrawal.",
+          "Description": "During withdrawal of the delivery system, pay close attention that the nose cone and capture basket do not snag or become trapped inside the endograft.",
+          "Type": "PromptCheck",
+          "Required data": "Operator assessment; automatic evidence for the full clinical statement is not implemented.",
+          "Notes": "Phase D check. Unlocks at 100% main-body deployment after D-C01 is resolved. Manual assessment of withdrawal hazards.\u000bCheck alert: Pay attention that the nose cone and cap basket do not become trapped inside the stent graft."
+        },
+        {
+          "ID": "D-C04",
+          "Context / Step": "Check that the stiff guidewire remains safely in the thoracic aorta during delivery-system withdrawal.",
+          "Description": "During and after withdrawal of the main-body delivery system, the stiff guidewire should remain in the thoracic aorta. Entering the region above the subclavian artery, the suprarenal region, the superior mesenteric artery, or the celiac trunk should trigger immediate repositioning.",
+          "Type": "ToolCheck",
+          "Required data": "Tool identity/family, anatomical region, multiplicity.",
+          "Notes": "Phase D check. Unlocks at 100% main-body deployment after D-C01 is resolved; live guidewire monitoring continues during withdrawal.\u000bCheck alert: Keep the stiff guidewire in the thoracic aorta and out of the subclavian, suprarenal, mesenteric and celiac danger regions."
+        },
+        {
+          "ID": "D-C05",
+          "Context / Step": "Check final main-body stability after delivery-system withdrawal.",
+          "Description": "This remains a prompt-info reminder for now: once the delivery system is out, visually confirm once more that the main body has remained stable and has not migrated from the landing positions obtained during deployment.",
+          "Type": "PromptCheck",
+          "Required data": "Operator assessment; automatic evidence for the full clinical statement is not implemented.",
+          "Notes": "Phase D check. Unlocks at 100% main-body deployment after D-C01 is resolved. Manual final graft-stability assessment after withdrawal.\u000bCheck alert: After withdrawal, recheck that the main body has not shifted from the achieved proximal and distal landing positions."
+        },
+        {
+          "ID": "PHASE E - Insertion and Positioning of Contralateral Limb"
+        },
+        {
+          "ID": "E-A01",
+          "Context / Step": "phase_e_entry",
+          "Description": "Set up the C-arm to visualize the contralateral iliac bifurcation and select the planned contralateral limb.",
+          "Type": "Alert",
+          "Required data": "Entry to Phase E.",
+          "Notes": "phase_E_entry.mp3"
+        },
+        {
+          "ID": "E-S01",
+          "Context / Step": "Contralateral Iliac Positioning",
+          "Description": "C-arm adjusted to visualise the iliac bifurcation.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "E-C01",
+          "Context / Step": "Check that the C-arm is adjusted to visualise the contralateral iliac bifurcation.",
+          "Description": "Adjust the C-arm so the contralateral iliac bifurcation is well profiled before positioning the limb. A clear view is required to judge the distal landing accurately and to preserve the intended iliac branches.",
+          "Type": "CArmCheck",
+          "Required data": "Live C-arm angles; runtime-side preplanning target; configured tolerance.",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Set a clear C-arm view of the contralateral iliac bifurcation before limb positioning."
+        },
+        {
+          "ID": "E-S02",
+          "Context / Step": "Introducing of Contralateral sheath",
+          "Description": "Withdraw the shaped (vertebral) catheter and insert an appropriate-size sheath (eg, 16 Fr) via the contralateral access. Advance the sheath to land at the contralateral iliac bif.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "E-S03",
+          "Context / Step": "Angio confirmation of iliac positioning",
+          "Description": "A contrast injection is performed to identify the iliac bifurcation and confirm an adequate landing zone for the limb extension.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "E-S04",
+          "Context / Step": "Contralateral LimbSelection",
+          "Description": "Select correct contralateral prosthesis.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "E-C02",
+          "Context / Step": "Check that the selected contralateral limb matches one of the compatible pre-planning recommendations.",
+          "Description": "Before introduction, compare the selected contralateral limb with both compatible pre-planning options. Either recommended code is valid for this patient; any other selection should be corrected before continuing.",
+          "Type": "Preplanning check",
+          "Required data": "Selected component code and applicable preplanning code(s).",
+          "Notes": "The agent must receive the simulator contralateral-limb selection message before E-A02 can be shown. Either compatible planned contralateral component code is accepted.\u000bCheck alert: Select either compatible contralateral limb recommended for the current patient."
+        },
+        {
+          "ID": "E-A02",
+          "Context / Step": "phase_e_insert_contralateral",
+          "Description": "Insert the contralateral limb and advance into the main body.",
+          "Type": "Alert",
+          "Required data": "E-C01/E-C02 resolved and simulator confirms a contralateral-limb prosthesis selection.",
+          "Notes": "phase_E_insert_contralateral.mp3"
+        },
+        {
+          "ID": "E-S05",
+          "Context / Step": "Contralateral LimbInsertion",
+          "Description": "The contralateral limb graft of appropriate dimensions is advanced into position, while keeping the stiff wire under control. Proceed with attention to the limb graft's proximal marker, the overlap marker in relation to the contralateral limb gate..",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "E-A04",
+          "Context / Step": "phase_e_contralateral_wrong_side",
+          "Description": "Contralateral limb on the wrong side. Insert it through the contralateral access.",
+          "Type": "Alert",
+          "Required data": "Contralateral limb detected on incorrect access side.",
+          "Notes": "phase_E_contralateral_wrong_side.mp3"
+        },
+        {
+          "ID": "E-A03",
+          "Context / Step": "phase_e_positioning_checks",
+          "Description": "Check the positioning of the proximal overlap marker and the distal landing marker before deployment.",
+          "Type": "Alert",
+          "Required data": "Contralateral limb reaches the required neck region.",
+          "Notes": "phase_E_positioning_checks.mp3"
+        },
+        {
+          "ID": "E-C03",
+          "Context / Step": "Check that the contralateral limb overlap marker is aligned with the contralateral gate before deployment.",
+          "Description": "The contralateral limb should be advanced so that its overlap marker aligns correctly with the contralateral gate. Proper overlap is critical for sealing the junction and avoiding a weak or insufficient component connection.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "CSV declares ToolPositionCheck but provides no runtime tool/position constraints: effective behaviour is manual. Separate internal-iliac preservation into E-C04.\u000bCheck alert: Align the contralateral limb overlap marker with the contralateral gate before release."
+        },
+        {
+          "ID": "E-C04",
+          "Context / Step": "Check that the planned distal landing will preserve internal iliac flow before contralateral limb deployment.",
+          "Description": "Before deployment of the contralateral limb, verify that the intended distal landing preserves internal iliac flow. This prompt protects against avoidable hypogastric coverage and pelvic ischemic complications.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Confirm internal iliac preservation before releasing the contralateral limb."
+        },
+        {
+          "ID": "PHASE F - Deployment of Contralateral Limb"
+        },
+        {
+          "ID": "F-A01",
+          "Context / Step": "phase_f_start_deployment",
+          "Description": "Begin deployment of the contralateral limb.",
+          "Type": "Alert",
+          "Required data": "Phase F begins with deployment incomplete.",
+          "Notes": "phase_F_contralateral_deployment.mp3"
+        },
+        {
+          "ID": "F-S01",
+          "Context / Step": "Contralateral Limb Deployment",
+          "Description": "The graft is deployed using controlled rotation of the deployment grip (blue) while keeping the delivery system (grey) in a fixed position.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Deployment percentage is available; automatic distal-marker and stability verification is not implemented."
+        },
+        {
+          "ID": "F-A02",
+          "Context / Step": "phase_f_stability_check",
+          "Description": "Check that the delivery system remains stable during deployment.",
+          "Type": "Alert",
+          "Required data": "Contralateral deployment reaches 15%.",
+          "Notes": "phase_F_stability_check.mp3"
+        },
+        {
+          "ID": "F-C01",
+          "Context / Step": "Check that the delivery system remains stable while the contralateral limb is deployed.",
+          "Description": "During deployment of the contralateral limb, the delivery system should remain fixed while the deployment grip is rotated. Unintended motion at release can compromise both overlap and distal landing.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "CSV DeploymentCheck is unimplemented as automatic verification. Deployment >=15% unlocks this manual check; percentage does not prove stability.\u000bCheck alert: Hold the delivery system steady during contralateral limb deployment to preserve overlap and landing."
+        },
+        {
+          "ID": "F-A03",
+          "Context / Step": "phase_f_complete_deployment",
+          "Description": "Complete deployment of the contralateral limb.",
+          "Type": "Alert",
+          "Required data": "F-C01 resolved while deployment remains below 100%.",
+          "Notes": "phase_F_complete_deployment.mp3"
+        },
+        {
+          "ID": "F-S02",
+          "Context / Step": "Retracting the nose cone",
+          "Description": "Confirm that the graft is fully open. Then the nose cone is reunited with the stent cover, by use of the trigger allowing the rear grip (blue) to be held stationary while the front grip (grey) is retreated caudally.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Agent assists fine positioning at contralateral leg deployment"
+        },
+        {
+          "ID": "F-A04",
+          "Context / Step": "phase_f_withdraw_delivery_system",
+          "Description": "Begin withdrawing the contralateral delivery system while maintaining guidewire control and prosthesis stability.",
+          "Type": "Alert",
+          "Required data": "Contralateral deployment reaches 100%.",
+          "Notes": "phase_F_withdraw_delivery_system.mp3"
+        },
+        {
+          "ID": "F-S03",
+          "Context / Step": "Withdrawal of the contralateral delivery system",
+          "Description": "The system is then carefully withdrawn under fluoroscopic control while the wire is kept stable, and using an alternating torque motion to ease passage without displacing the graft.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "F-C02",
+          "Context / Step": "Check that the contralateral delivery system is withdrawn while guidewire stability is maintained.",
+          "Description": "After the limb is fully opened and the nose cone is recaptured, the contralateral delivery system should be withdrawn under fluoroscopic control while keeping the wire stable.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "CSV ToolWithdrawnCheck lacks tool constraints: effective check is manual. Actual device-removal telemetry separately gates the extender branch after full deployment.\u000bCheck alert: Withdraw the contralateral delivery system carefully while keeping wire control."
+        },
+        {
+          "ID": "F-C03",
+          "Context / Step": "Check that the contralateral limb remains stable after deployment and system withdrawal.",
+          "Description": "After deployment and delivery-system withdrawal, re-evaluate the contralateral limb to confirm that overlap and distal landing are still intact before moving on.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "CSV ToolPositionCheck lacks position constraints: manual final limb-stability assessment.\u000bCheck alert: Confirm the contralateral limb remains stable after deployment and withdrawal."
+        },
+        {
+          "ID": "F-A10",
+          "Context / Step": "phase_f_extender_decision",
+          "Description": "Would you add an iliac extender? Review the iliac landing and decide whether an extender is required before proceeding.",
+          "Type": "Alert",
+          "Required data": "Contralateral device removed after 100% and F-C01..03 resolved; ask whether to add extender.",
+          "Notes": "Workflow alert Audio asset: phase_F_extender_decision.mp3 Branch: confirmed No skips F-C04/F-C05 and proceeds to G; Yes continues with selection/introduction. F-A07 and F-A11 are alternatives, not successive mandatory prompts."
+        },
+        {
+          "ID": "F-A06",
+          "Context / Step": "phase_f_review_planned_extender",
+          "Description": "Pre-planning recommends an iliac extender. Review the planned component carefully before proceeding.",
+          "Type": "Alert",
+          "Required data": "Catalogue/API definition for planned-extender review; no active frontend dispatch found. Shown beside the intended decision branch, not as an obligatory emitted alert.",
+          "Notes": "phase_F_review_planned_extender.mp3"
+        },
+        {
+          "ID": "F-A07",
+          "Context / Step": "phase_f_confirm_unplanned_extender",
+          "Description": "Pre-planning does not predict that an iliac extender is necessary. Review the anatomy and confirm whether you still want to introduce one.",
+          "Type": "Alert",
+          "Required data": "Conditional: Yes to an extender when none is planned; asks for confirmation.",
+          "Notes": "phase_F_confirm_unplanned_extender.mp3"
+        },
+        {
+          "ID": "F-A11",
+          "Context / Step": "phase_f_confirm_planned_extender_decline",
+          "Description": "Pre-planning recommends an iliac extender. Are you sure you want to proceed without it?",
+          "Type": "Alert",
+          "Required data": "Conditional: No to an extender recommended by the plan; asks for confirmation.",
+          "Notes": "phase_F_confirm_planned_extender_decline.mp3"
+        },
+        {
+          "ID": "F-C04",
+          "Context / Step": "Check that the selected iliac extender matches the pre-planning recommendation.",
+          "Description": "If an extender is chosen, review the selected component against the plan when one exists; use the manual selection branch for an unplanned extender.",
+          "Type": "Preplanning check",
+          "Required data": "Selected component code and applicable preplanning code(s).",
+          "Notes": "Extender need is a separate Yes/No workflow decision after withdrawal and F-C01..03 resolution. Planned extender: code verification. Unplanned extender: manual selection branch. Choosing no dismisses F-C04/F-C05. CSV wording assumes a planned extender and must not be read as universal.\u000bCheck alert: Select the planned iliac extender before introduction."
+        },
+        {
+          "ID": "F-A12",
+          "Context / Step": "phase_f_start_extender_introduction",
+          "Description": "Start the iliac extender introduction.",
+          "Type": "Alert",
+          "Required data": "Extender chosen/selected and F-C04 resolved; await insertion.",
+          "Notes": "phase_F_start_iliac_introduction.mp3"
+        },
+        {
+          "ID": "F-A08",
+          "Context / Step": "phase_f_introduce_extender",
+          "Description": "Introduce the iliac extender.",
+          "Type": "Alert",
+          "Required data": "Catalogue entry retained; no active dispatch reference found. Current introduction prompt uses F-A12.",
+          "Notes": "Workflow alert Catalogue presence does not establish runtime activation. Audio asset: phase_F_introduce_extender.mp3"
+        },
+        {
+          "ID": "F-S04",
+          "Context / Step": "Optional iliac extender placement",
+          "Description": "If an extender is chosen, introduce it after component review; then follow the deployment prompts and intermediate check below.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "F-A05",
+          "Context / Step": "phase_f_start_extender",
+          "Description": "Check for correct positioning of the iliac extender and start its deployment.",
+          "Type": "Alert",
+          "Required data": "Chosen extender detected as inserted; begins extender deployment stage.",
+          "Notes": "phase_F_start_iliac_deployment.mp3"
+        },
+        {
+          "ID": "F-C05",
+          "Context / Step": "Check final overlap distal sealing and internal iliac preservation if an iliac extender is deployed.",
+          "Description": "When an iliac extender is selected and deployed, verify adequate overlap with the previous limb, correct distal sealing, preservation of the internal iliac artery, and stable final position.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Manual assessment; runtime presents this check at extender deployment >=75%, then requests completion to 100%. REVIEW: its wording says final/stable result although full deployment has not yet been required.\u000bCheck alert: If an iliac extender is used, confirm overlap seal and branch preservation before continuing. Appears at >=75%; F-A09 subsequently requests 100% completion before Phase G."
+        },
+        {
+          "ID": "F-A09",
+          "Context / Step": "phase_f_complete_extender",
+          "Description": "Complete iliac extender deployment.",
+          "Type": "Alert",
+          "Required data": "Extender reaches >=75% and F-C05 is resolved; request completion to 100%.",
+          "Notes": "phase_F_complete_iliac_extender.mp3"
+        },
+        {
+          "ID": "PHASE G - Completion with Angiogram"
+        },
+        {
+          "ID": "G-A01",
+          "Context / Step": "phase_g_moulding",
+          "Description": "Position the pigtail catheter for the completion angiogram.",
+          "Type": "Alert",
+          "Required data": "Entry to Phase G; position pigtail.",
+          "Notes": "phase_G_entry.mp3"
+        },
+        {
+          "ID": "G-S01",
+          "Context / Step": "C-arm positioning",
+          "Description": "Position the c-arm for the completion angiogram.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Reference corrected: A-C04. No separate Phase G C-arm checklist entry is configured."
+        },
+        {
+          "ID": "G-S02",
+          "Context / Step": "Completion Setup and Pigtail Insertion",
+          "Description": "Choosing whichever side is most convenient, a pigtail catheter is inserted to allow final angiographic assessment with contrast released just above the renal artery level - its guide wire having been retracted to allow the pigtail to form visibly.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "G-C01",
+          "Context / Step": "Check that the pigtail or marker catheter is positioned just above the renal arteries for the completion angiogram.",
+          "Description": "For the completion angiogram, the pigtail or marker catheter should sit just above the renal artery level so contrast gives a dependable overview of the proximal seal and the main branches.",
+          "Type": "ToolCheck",
+          "Required data": "Tool identity/family, anatomical region, multiplicity.",
+          "Notes": "Assessment limited to the configured check; see required data.\u000bCheck alert: Place the pigtail or marker catheter just above the renal arteries for a reliable completion angiogram."
+        },
+        {
+          "ID": "G-S03",
+          "Context / Step": "Withdrawal of redundant stiff wire",
+          "Description": "Withdraw the stiff wire from the other side to below the stent bifurcation to allow the iliac limbs to take their natural shape.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "G-A02",
+          "Context / Step": "phase_g_final_angiography",
+          "Description": "Perform the final angiogram.",
+          "Type": "Alert",
+          "Required data": "G-C01 resolved; waits for a newer angiography event.",
+          "Notes": "phase_G_final_angiography.mp3"
+        },
+        {
+          "ID": "G-S04",
+          "Context / Step": "Completion Angiogram",
+          "Description": "A final angiogram using contrast should confirm that: the main stent graft position is below the renal arteries, preservation of bilateral internal iliac flows, and absence of endoleaks.",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        },
+        {
+          "ID": "G-C02",
+          "Context / Step": "Check the final angiogram for correct graft position, bilateral internal iliac flow, and absence of endoleaks.",
+          "Description": "Interpret the completion angiogram systematically, confirming that the main body remains below the renal arteries, both internal iliac arteries are preserved, and no endoleak is visible. This is the final global technical assessment of the repair.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "Manual image interpretation. No implemented angiogram anomaly/endoleak-recognition model.\u000bCheck alert: Use the final angiogram to confirm renal clearance iliac patency and no endoleak."
+        },
+        {
+          "ID": "G-C03",
+          "Context / Step": "Check whether balloon moulding is required and repeat angiography if moulding is performed.",
+          "Description": "Balloon moulding should be reserved for a clear indication such as incomplete apposition or a suspected sealing issue. If moulding is performed, a repeat angiogram is required to confirm the result and exclude new problems.",
+          "Type": "PromptCheck",
+          "Required data": "",
+          "Notes": "OPEN INCONSISTENCY: check says moulding only if needed with repeat angiography. Current frontend requests bilateral moulding after G-C02/G-C03, completes on bilateral balloon removal, and has no subsequent repeat-angiogram gate. Do not present this as resolved clinical guidance.\u000bCheck alert: Perform balloon moulding only if needed and repeat angiography after it."
+        },
+        {
+          "ID": "G-A04",
+          "Context / Step": "phase_g_start_moulding",
+          "Description": "If there are no complications on the angiogram, proceed with balloon moulding on both sides.",
+          "Type": "Alert",
+          "Required data": "Initial angiography recorded and G-C02/G-C03 resolved. Conflicts with optional moulding wording.",
+          "Notes": "phase_G_start_moulding.mp3"
+        },
+        {
+          "ID": "G-S05",
+          "Context / Step": "Balloon Moulding",
+          "Description": "If necessary, a balloon catheter is used within the covered segments of the stent graft to improve apposition. Balloon is inflated with contrast, deflated, and removed. Repeat as needed.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Intended optional step retained. Current frontend instead requires bilateral balloon-removal evidence; see G-C03 and G alerts."
+        },
+        {
+          "ID": "G-A05",
+          "Context / Step": "phase_g_balloon_guidance",
+          "Description": "Advance the balloon to the renal bifurcation and inflate it, then perform balloon moulding in the iliac landing zone.",
+          "Type": "Alert",
+          "Required data": "Balloon detected on a side not yet given guidance.",
+          "Notes": "phase_G_balloon_guidance.mp3"
+        },
+        {
+          "ID": "G-A03",
+          "Context / Step": "phase_g_balloon_other_side",
+          "Description": "Finish with the other side, repeating the same balloon moulding procedure.",
+          "Type": "Alert",
+          "Required data": "Balloon removal recorded on one side.",
+          "Notes": "phase_G_balloon_other_side.mp3"
+        },
+        {
+          "ID": "G-S06",
+          "Context / Step": "Repeat Angiogram",
+          "Description": "If necessary, following balloon moulding, a repeat of the completion angiogram should confirm the absence of endoleaks.",
+          "Type": "Intended step; not runtime-gated",
+          "Required data": "",
+          "Notes": "Intended repeat angiography retained; current frontend does not gate completion on a repeat angiogram after moulding."
+        },
+        {
+          "ID": "G-A06",
+          "Context / Step": "phase_g_finished",
+          "Description": "Procedure is finished. Have a look at the report in the simulator.",
+          "Type": "Alert",
+          "Required data": "Balloon removal recorded on both sides; no repeat-angiogram gate in current frontend.",
+          "Notes": "Workflow alert Audio asset: phase_G_finished.mp3 This row follows the intended repeat angiogram in the script, but the current software can emit it earlier, immediately after bilateral balloon removal; G-S06 is not enforced."
+        }
+      ]
+    }
+  ]
+}
