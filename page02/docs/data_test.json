@@ -1,0 +1,68 @@
+{
+  "source": "/Users/bev/Downloads/Intra-op-Script-v12.docx",
+  "table_count": 1,
+  "tables": [
+    {
+      "table_index": 0,
+      "headers": [
+        "ID",
+        "Context / Step",
+        "Description",
+        "Type",
+        "Required data",
+        "Notes"
+      ],
+      "row_count": 6,
+      "rows": [
+        {
+          "ID": "A-A00",
+          "Context / Step": "procedure_start",
+          "Description": "Let's begin by setting up the ipsilateral and contralateral femoral access.",
+          "Type": "Alert",
+          "Required data": "Procedure started event.",
+          "Notes": "procedure_start.mp3"
+        },
+        {
+          "ID": "A-S01",
+          "Context / Step": "Femoral Arterial Access",
+          "Description": "Ultrasound-guided retrograde bilateral femoral access. 6Fr introducer, double Proglide prepositioning per side, 10 Fr sheath.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "Suitable navigational wires, eg, J-tip guidewires, advanced into the abdominal aorta."
+        },
+        {
+          "ID": "A-M01",
+          "Context / Step": "Insert standard guidewire - left",
+          "Description": "Insert the standard guidewire from the left access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_family: guidewire; required_stiffness: standard; access_scope: left",
+          "Notes": "Keep left and right access distinct until the stiff guidewire establishes the ipsilateral side. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-M02",
+          "Context / Step": "Insert standard guidewire - right",
+          "Description": "Insert the standard guidewire from the right access.",
+          "Type": "Milestone",
+          "Required data": "rule_type: tool_seen; required_family: guidewire; required_stiffness: standard; access_scope: right",
+          "Notes": "Keep left and right access distinct until the stiff guidewire establishes the ipsilateral side. Left/right pairs need not occur in the printed order; the stiff-wire access establishes the ipsilateral side."
+        },
+        {
+          "ID": "A-S02",
+          "Context / Step": "Catheter insertion and advancement via the Ipsilateral Side",
+          "Description": "A suitable catheter (eg, Berenstein) is passed over the ipsilateral J-tip wire and the two are advanced into the thoracic aorta to ensure non-traumatic access.First guidewire into the thoracic aorta, then catheter.",
+          "Type": "",
+          "Required data": "",
+          "Notes": "IMPLEMENTATION GAP: this step permits a suitable catheter (e.g. Berenstein), whereas A-M03/A-M04 currently require pigtail or marker pigtail on both sides."
+        },
+        {
+          "ID": "A-S03",
+          "Context / Step": "Contralateral Catheter Placement",
+          "Description": "A pigtail catheter is inserted via the contralateral femoral artery and over the J-tip wire and positioned with the tip curled just above the renal artery level (usually just above the L1-L2 disc space).",
+          "Type": "",
+          "Required data": "",
+          "Notes": ""
+        }
+      ]
+    }
+  ]
+}

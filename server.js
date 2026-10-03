@@ -14,7 +14,7 @@ findFreePort(3000, (err, freePort) => {
     app.use(express.json());
 
     // Serve static files from the docs/ directory
-    app.use(express.static(path.join(__dirname, 'docs')));
+    app.use(express.static(path.join(__dirname, 'page02', 'docs')));
 
     // Set homepage to page02/docs/index.html
     app.get('/', (req, res) => {
@@ -45,7 +45,7 @@ findFreePort(3000, (err, freePort) => {
         }
 
         try {
-            const directoryTree = readDirRecursive(path.join(__dirname, 'docs'));
+            const directoryTree = readDirRecursive(path.join(__dirname, 'page02', 'docs'));
             res.json({ files: directoryTree });
         } catch (err) {
             console.error('Error reading directory:', err);

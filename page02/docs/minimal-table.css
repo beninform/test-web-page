@@ -1,0 +1,38 @@
+/* Hacked together based on:
+ * https://jgthms.com/web-design-in-4-minutes/ 
+ */
+
+:root {
+  --color-hi: #f56a6a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #555;
+  margin: 0 auto;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.2;
+  padding: 2em 1em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 1.5em;
+}
+
+strong {
+  color: #333;
+}
+
+/*#table-container > */
+table, th, td {
+  border: 1.5px solid #69c;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
