@@ -36,3 +36,61 @@ table, th, td {
 th, td {
   padding: 5px;
 }
+
+.hide {
+  display: none;
+}
+
+
+.id {
+  width: 10%;
+}
+.context {
+  width: 20%;
+}
+.descr {
+  width: 40%;
+}
+.type {
+  width: 8%;
+}
+.reqd {
+  width: 16%;
+}
+.notes {
+  width: 16%;
+}
+.wide-context {
+  width: 40%;
+}
+.slim-descr {
+  width: 10%;
+}
+
+.alert {
+  background-color: #fdf2d0;
+}
+
+.milestone {
+  background-color: #ccd9f5;
+}
+
+.check {
+  background-color: #edcdcd;
+}
+
+.phase {
+  background-color: #6a99d0;
+  color: #fff;
+}
+
+.yellow {
+  background-color: #ffff54;
+}
+
+
+
+
+
+
+

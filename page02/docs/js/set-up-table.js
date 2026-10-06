@@ -1,6 +1,5 @@
 
 // Load JSON file using fetch API
-// const datafile = 'data/data.json';
 const datafile = 'data/Intra-op-Script-v12.json';
 fetch(datafile)
     .then(response => {
@@ -10,8 +9,6 @@ fetch(datafile)
         return response.json();
     })
     .then(data => {
-
-		// console.log(data);
 
 		const tableContainer = document.querySelector('#table-container');
 		const table = document.createElement('table');
@@ -23,18 +20,17 @@ fetch(datafile)
         table.appendChild(thead);
         table.appendChild(tbody);
 
-        const thWidths = [10, 20, 40, 8, 16, 16];
+        const thWidths = ['id', 'context', 'descr', 'type', 'reqd', 'notes'];
         const colCount = thWidths.length;
         const headers = data.tables[0].headers;
         headers.forEach((item, i) => {
         	const thEl = document.createElement('th');
         	thEl.textContent = item;
-        	thEl.setAttribute("style", `width:${thWidths[i]}%`)
+        	thEl.classList.add(thWidths[i])
 
         	thead.appendChild(thEl);
 
         })
-        // console.log(data.tables[0].rows);
 
         const rows = data.tables[0].rows;
 
@@ -50,19 +46,20 @@ fetch(datafile)
 	            	var cellLeft6 = cellText.slice(0, 6);
 	            	var cellLeft9 = cellText.slice(0, 9);
 	            	var cellText2 = cellText.slice(2, 3);
-	            	if (cellText2=='A') {
-		            	rowEl.setAttribute('bgcolor', '#fdf2d0')
+	            	if ((cellText2=='A') && (cellLeft6!='PHASE ')) {
+		            	rowEl.classList.add('alert');
 	            	} else if (cellText2=='M') {
-		            	rowEl.setAttribute('bgcolor', '#ccd9f5')
+		            	rowEl.classList.add('milestone');
 	            	} else if (cellText2=='C') {
-		            	rowEl.setAttribute('bgcolor', '#edcdcd')
+		            	rowEl.classList.add('check');
+	            	} else if (cellText2=='S') {
+		            	rowEl.classList.add('step');
 	            	}
 	            	if (cellLeft6=='PHASE ') {
-	            		rowEl.setAttribute('bgcolor', '#6a99d0')
-	            		rowEl.setAttribute('style', 'color: #fff')
+		            	rowEl.classList.add('phase');
 	            	}
 	            	if (cellLeft9=='The below') {
-	            		rowEl.setAttribute('bgcolor', '#ffff54')
+		            	rowEl.classList.add('yellow');
 	            	}
 
 	            	td.setAttribute('style', 'font-weight:bold');
@@ -85,11 +82,16 @@ fetch(datafile)
             		
             		// IF it was not a full span row - don't break out of the headers loop
 	            	} else {
-	            		td.innerHTML = cellText;
+	            		const span = document.createElement('span');
+	            		span.innerHTML = cellText;
+	            		td.appendChild(span);
 	            		rowEl.appendChild(td);
 	            		if ((i==1) || (i==3)) {
 	            			td.setAttribute('style', 'font-weight:bold');
+	            		} else {
+	            			span.classList.add('detail-text');
 	            		}
+
 	            		return true;
 	            	}
 	            }
@@ -100,9 +102,61 @@ fetch(datafile)
             tbody.appendChild(rowEl);
         });
     })
+    .then(x => {
+		const toggleButton = document.getElementById('toggleRows');
+		const toggleA = document.getElementById('toggleA');
+		const toggleM = document.getElementById('toggleM');
+
+		const thead = document.getElementsByTagName('thead')[0];
+		const contextHead = thead.getElementsByTagName('th')[1]
+		const descrHead = thead.getElementsByTagName('th')[2]
+
+		const cellContents = document.querySelectorAll('.detail-text');
+		toggleButton.addEventListener('click', () => {
+			contextHead.classList.toggle('wide-context');
+			descrHead.classList.toggle('slim-descr');
+			cellContents.forEach(cell => {
+				cell.classList.toggle('hide');
+			})
+		})    	
+
+		const rowsA = document.querySelectorAll('.alert');
+		const rowsY = document.querySelectorAll('.yellow');
+		toggleA.addEventListener('click', () => {
+			rowsY.forEach(row => row.classList.toggle('hide'))
+			rowsA.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})    	
+
+		const rowsM = document.querySelectorAll('.milestone');
+		toggleM.addEventListener('click', () => {
+			rowsM.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})    	
+
+		const rowsC = document.querySelectorAll('.check');
+		toggleC.addEventListener('click', () => {
+			rowsC.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})    	
+
+		const rowsS = document.querySelectorAll('.step');
+		toggleS.addEventListener('click', () => {
+			rowsS.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})    	
+
+    })
     .catch(error => {
-        console.error('Error loading JSON:', error);
+        console.error('Error loading JSON and making table:', error);
     });
+
+
+
 
 
 
