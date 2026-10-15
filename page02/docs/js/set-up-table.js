@@ -1,6 +1,6 @@
 
 // Load JSON file using fetch API
-const datafile = 'data/Intra-op-Script-v12.json';
+const datafile = 'data/Intra-op-Script-v12-1.json';
 fetch(datafile)
     .then(response => {
         if (!response.ok) {
@@ -61,10 +61,13 @@ fetch(datafile)
 	            	if (cellLeft9=='The below') {
 		            	rowEl.classList.add('yellow');
 	            	}
+	            	if (cellLeft9=='REPEAT SA') {
+		            	rowEl.classList.add('yellow');
+	            	}
 
 	            	td.setAttribute('style', 'font-weight:bold');
 	            	// IF the content means it should be full span
-	            	if ((cellLeft6=='PHASE ') || (cellLeft9=='The below'))  {
+	            	if ((cellLeft6=='PHASE ') || (cellLeft9=='The below') || (cellLeft9=='REPEAT SA'))  {
 		            	td.innerHTML = cellText;
 		            	td.setAttribute('colspan', "9");
 		            	rowTypeIsNormal = false;
