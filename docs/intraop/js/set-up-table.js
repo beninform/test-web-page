@@ -173,44 +173,44 @@ fetch(datafile)
 		togglePhA.addEventListener('click', () => {
 			rowsY.forEach(row => row.classList.toggle('hide'))  // first yellow full-width row lumped into phase A
 			rowsPhA.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 		const rowsPhB = document.querySelectorAll('.phase-b');
 		togglePhB.addEventListener('click', () => {
 			rowsPhB.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 
 		const rowsPhC = document.querySelectorAll('.phase-c');
 		togglePhC.addEventListener('click', () => {
 			rowsPhC.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 		const rowsPhD = document.querySelectorAll('.phase-d');
 		togglePhD.addEventListener('click', () => {
 			rowsPhD.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 		const rowsPhE = document.querySelectorAll('.phase-e');
 		togglePhE.addEventListener('click', () => {
 			rowsPhE.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 		const rowsPhF = document.querySelectorAll('.phase-f');
 		togglePhF.addEventListener('click', () => {
 			rowsPhF.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 		const rowsPhG = document.querySelectorAll('.phase-g');
 		togglePhG.addEventListener('click', () => {
 			rowsPhG.forEach(row => {
-				row.classList.toggle('hide');
+				row.classList.toggle('phide');
 			})
 		})   
 
