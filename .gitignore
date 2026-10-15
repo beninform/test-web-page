@@ -1,4 +1,28 @@
+# unused app directory
 /page01
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+.env.*
+!.env.example
+
+# IDEs and editors
+.settings/
+*.sublime-workspace
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# Output of 'npm pack'
+*.tgz
 
 # System Files
 .DS_Store

@@ -10,6 +10,7 @@ fetch(datafile)
     })
     .then(data => {
 
+    	// create the table
 		const tableContainer = document.querySelector('#table-container');
 		const table = document.createElement('table');
         const thead = document.createElement('thead');
@@ -34,6 +35,7 @@ fetch(datafile)
 
         const rows = data.tables[0].rows;
 
+        // populate the table rows
         rows.forEach(row => {
             var rowEl = document.createElement('tr');
             var rowTypeIsNormal = true;
@@ -41,8 +43,9 @@ fetch(datafile)
             	var cellText = row[col_head];
             	const td = document.createElement('td');
 
-            	// IF it is the first cell of a row
+            	// IF it is the first cell of a row, set the row class based on the initial content
             	if ((cellText) && (i==0)) {
+	            	var cellLeft1 = cellText.slice(0, 1);
 	            	var cellLeft6 = cellText.slice(0, 6);
 	            	var cellLeft9 = cellText.slice(0, 9);
 	            	var cellText2 = cellText.slice(2, 3);
@@ -63,6 +66,21 @@ fetch(datafile)
 	            	}
 	            	if (cellLeft9=='REPEAT SA') {
 		            	rowEl.classList.add('yellow');
+	            	}
+	            	if        (cellLeft1=='A') {
+	            		rowEl.classList.add('phase-a');
+	            	} else if (cellLeft1=='B') {
+	            		rowEl.classList.add('phase-b');
+	            	} else if (cellLeft1=='C') {
+	            		rowEl.classList.add('phase-c');
+	            	} else if (cellLeft1=='D') {
+	            		rowEl.classList.add('phase-d');
+	            	} else if (cellLeft1=='E') {
+	            		rowEl.classList.add('phase-e');
+	            	} else if (cellLeft1=='F') {
+	            		rowEl.classList.add('phase-f');
+	            	} else if (cellLeft1=='G') {
+	            		rowEl.classList.add('phase-g');
 	            	}
 
 	            	td.setAttribute('style', 'font-weight:bold');
@@ -106,16 +124,14 @@ fetch(datafile)
         });
     })
     .then(x => {
-		const toggleButton = document.getElementById('toggleRows');
-		const toggleA = document.getElementById('toggleA');
-		const toggleM = document.getElementById('toggleM');
+    	// Set up the first and second column width changes for toggling
 
 		const thead = document.getElementsByTagName('thead')[0];
 		const contextHead = thead.getElementsByTagName('th')[1]
 		const descrHead = thead.getElementsByTagName('th')[2]
 
 		const cellContents = document.querySelectorAll('.detail-text');
-		toggleButton.addEventListener('click', () => {
+		toggleRows.addEventListener('click', () => {
 			contextHead.classList.toggle('wide-context');
 			descrHead.classList.toggle('slim-descr');
 			cellContents.forEach(cell => {
@@ -124,7 +140,7 @@ fetch(datafile)
 		})    	
 
 		const rowsA = document.querySelectorAll('.alert');
-		const rowsY = document.querySelectorAll('.yellow');
+		const rowsY = document.querySelectorAll('.yellow');  // lumps all yellow full-width rows in with alerts for toggling
 		toggleA.addEventListener('click', () => {
 			rowsY.forEach(row => row.classList.toggle('hide'))
 			rowsA.forEach(row => {
@@ -152,6 +168,59 @@ fetch(datafile)
 				row.classList.toggle('hide');
 			})
 		})    	
+
+		const rowsPhA = document.querySelectorAll('.phase-a');
+		togglePhA.addEventListener('click', () => {
+			rowsY.forEach(row => row.classList.toggle('hide'))  // first yellow full-width row lumped into phase A
+			rowsPhA.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+		const rowsPhB = document.querySelectorAll('.phase-b');
+		togglePhB.addEventListener('click', () => {
+			rowsPhB.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+
+		const rowsPhC = document.querySelectorAll('.phase-c');
+		togglePhC.addEventListener('click', () => {
+			rowsPhC.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+		const rowsPhD = document.querySelectorAll('.phase-d');
+		togglePhD.addEventListener('click', () => {
+			rowsPhD.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+		const rowsPhE = document.querySelectorAll('.phase-e');
+		togglePhE.addEventListener('click', () => {
+			rowsPhE.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+		const rowsPhF = document.querySelectorAll('.phase-f');
+		togglePhF.addEventListener('click', () => {
+			rowsPhF.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+		const rowsPhG = document.querySelectorAll('.phase-g');
+		togglePhG.addEventListener('click', () => {
+			rowsPhG.forEach(row => {
+				row.classList.toggle('hide');
+			})
+		})   
+
+
+
+
+
+
+
+
 
     })
     .catch(error => {
