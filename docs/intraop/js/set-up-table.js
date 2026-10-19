@@ -1,235 +1,101 @@
+const headers = ['ID', 'Context / Step', 'Description', 'Type', 'Required data', 'Notes'];
+const types = { A: 'alert', M: 'milestone', C: 'check', S: 'step' };
+const container = document.querySelector('#table-container');
+const status = document.querySelector('#status');
 
-// Load JSON file using fetch API
-const datafile = 'data/Intra-op-Script-v12-1.json';
-fetch(datafile)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-
-    	// create the table
-		const tableContainer = document.querySelector('#table-container');
-		const table = document.createElement('table');
-        const thead = document.createElement('thead');
-        thead.setAttribute('bgcolor', '#2c4d76')
-        thead.setAttribute('style', 'color: #fff')
-        const tbody = document.createElement('tbody');
-        tableContainer.appendChild(table);        
-        table.appendChild(thead);
-        table.appendChild(tbody);
-
-        const thWidths = ['id', 'context', 'descr', 'type', 'reqd', 'notes'];
-        const colCount = thWidths.length;
-        const headers = data.tables[0].headers;
-        headers.forEach((item, i) => {
-        	const thEl = document.createElement('th');
-        	thEl.textContent = item;
-        	thEl.classList.add(thWidths[i])
-
-        	thead.appendChild(thEl);
-
-        })
-
-        const rows = data.tables[0].rows;
-
-        // populate the table rows
-        rows.forEach(row => {
-            var rowEl = document.createElement('tr');
-            var rowTypeIsNormal = true;
-            headers.every((col_head, i) => {
-            	var cellText = row[col_head];
-            	const td = document.createElement('td');
-
-            	// IF it is the first cell of a row, set the row class based on the initial content
-            	if ((cellText) && (i==0)) {
-	            	var cellLeft1 = cellText.slice(0, 1);
-	            	var cellLeft6 = cellText.slice(0, 6);
-	            	var cellLeft9 = cellText.slice(0, 9);
-	            	var cellText2 = cellText.slice(2, 3);
-	            	if ((cellText2=='A') && (cellLeft6!='PHASE ')) {
-		            	rowEl.classList.add('alert');
-	            	} else if (cellText2=='M') {
-		            	rowEl.classList.add('milestone');
-	            	} else if (cellText2=='C') {
-		            	rowEl.classList.add('check');
-	            	} else if (cellText2=='S') {
-		            	rowEl.classList.add('step');
-	            	}
-	            	if (cellLeft6=='PHASE ') {
-		            	rowEl.classList.add('phase');
-	            	}
-	            	if (cellLeft9=='The below') {
-		            	rowEl.classList.add('yellow');
-	            	}
-	            	if (cellLeft9=='REPEAT SA') {
-		            	rowEl.classList.add('yellow');
-	            	}
-	            	if        (cellLeft1=='A') {
-	            		rowEl.classList.add('phase-a');
-	            	} else if (cellLeft1=='B') {
-	            		rowEl.classList.add('phase-b');
-	            	} else if (cellLeft1=='C') {
-	            		rowEl.classList.add('phase-c');
-	            	} else if (cellLeft1=='D') {
-	            		rowEl.classList.add('phase-d');
-	            	} else if (cellLeft1=='E') {
-	            		rowEl.classList.add('phase-e');
-	            	} else if (cellLeft1=='F') {
-	            		rowEl.classList.add('phase-f');
-	            	} else if (cellLeft1=='G') {
-	            		rowEl.classList.add('phase-g');
-	            	}
-
-	            	td.setAttribute('style', 'font-weight:bold');
-	            	// IF the content means it should be full span
-	            	if ((cellLeft6=='PHASE ') || (cellLeft9=='The below') || (cellLeft9=='REPEAT SA'))  {
-		            	td.innerHTML = cellText;
-		            	td.setAttribute('colspan', "9");
-		            	rowTypeIsNormal = false;
-	            		rowEl.appendChild(td);
-		            	return true;
-	            	}
-
-
-	            // IF it is a later cell of a row
-            	} else if (i>0) {
-
-            		// IF it was a full span row - then break out of the headers loop
-            		if (rowTypeIsNormal==false) {
-            			return false;
-            		
-            		// IF it was not a full span row - don't break out of the headers loop
-	            	} else {
-	            		const span = document.createElement('span');
-	            		span.innerHTML = cellText;
-	            		td.appendChild(span);
-	            		rowEl.appendChild(td);
-	            		if ((i==1) || (i==3)) {
-	            			td.setAttribute('style', 'font-weight:bold');
-	            		} else {
-	            			span.classList.add('detail-text');
-	            		}
-
-	            		return true;
-	            	}
-	            }
-    			td.innerHTML = cellText;
-	            rowEl.appendChild(td);
-	            return true;
-            })
-            tbody.appendChild(rowEl);
-        });
-    })
-    .then(x => {
-    	// Set up the first and second column width changes for toggling
-
-		const thead = document.getElementsByTagName('thead')[0];
-		const contextHead = thead.getElementsByTagName('th')[1]
-		const descrHead = thead.getElementsByTagName('th')[2]
-
-		const cellContents = document.querySelectorAll('.detail-text');
-		toggleRows.addEventListener('click', () => {
-			contextHead.classList.toggle('wide-context');
-			descrHead.classList.toggle('slim-descr');
-			cellContents.forEach(cell => {
-				cell.classList.toggle('hide');
-			})
-		})    	
-
-		const rowsA = document.querySelectorAll('.alert');
-		const rowsY = document.querySelectorAll('.yellow');  // lumps all yellow full-width rows in with alerts for toggling
-		toggleA.addEventListener('click', () => {
-			rowsY.forEach(row => row.classList.toggle('hide'))
-			rowsA.forEach(row => {
-				row.classList.toggle('hide');
-			})
-		})    	
-
-		const rowsM = document.querySelectorAll('.milestone');
-		toggleM.addEventListener('click', () => {
-			rowsM.forEach(row => {
-				row.classList.toggle('hide');
-			})
-		})    	
-
-		const rowsC = document.querySelectorAll('.check');
-		toggleC.addEventListener('click', () => {
-			rowsC.forEach(row => {
-				row.classList.toggle('hide');
-			})
-		})    	
-
-		const rowsS = document.querySelectorAll('.step');
-		toggleS.addEventListener('click', () => {
-			rowsS.forEach(row => {
-				row.classList.toggle('hide');
-			})
-		})    	
-
-		const rowsPhA = document.querySelectorAll('.phase-a');
-		togglePhA.addEventListener('click', () => {
-			rowsY.forEach(row => row.classList.toggle('hide'))  // first yellow full-width row lumped into phase A
-			rowsPhA.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-		const rowsPhB = document.querySelectorAll('.phase-b');
-		togglePhB.addEventListener('click', () => {
-			rowsPhB.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-
-		const rowsPhC = document.querySelectorAll('.phase-c');
-		togglePhC.addEventListener('click', () => {
-			rowsPhC.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-		const rowsPhD = document.querySelectorAll('.phase-d');
-		togglePhD.addEventListener('click', () => {
-			rowsPhD.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-		const rowsPhE = document.querySelectorAll('.phase-e');
-		togglePhE.addEventListener('click', () => {
-			rowsPhE.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-		const rowsPhF = document.querySelectorAll('.phase-f');
-		togglePhF.addEventListener('click', () => {
-			rowsPhF.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-		const rowsPhG = document.querySelectorAll('.phase-g');
-		togglePhG.addEventListener('click', () => {
-			rowsPhG.forEach(row => {
-				row.classList.toggle('phide');
-			})
-		})   
-
-
-
-
-
-
-
-
-
-    })
-    .catch(error => {
-        console.error('Error loading JSON and making table:', error);
+function applyFilters() {
+    const phases = new Set(Array.from(document.querySelectorAll('[data-phase]:checked'), el => el.dataset.phase));
+    const selectedTypes = new Set(Array.from(document.querySelectorAll('[data-type]:checked'), el => el.dataset.type));
+    container.querySelectorAll('tbody tr').forEach(row => {
+        row.hidden = !phases.has(row.dataset.phase) ||
+            Boolean(row.dataset.type && !selectedTypes.has(row.dataset.type));
     });
+    container.classList.toggle('compact', !document.querySelector('#details').checked);
+}
 
+function validateData(data) {
+    const table = data?.tables?.[0];
+    if (!table || !Array.isArray(table.rows) || !table.rows.length ||
+        !headers.every(header => table.headers?.includes(header)) ||
+        !table.rows.every(row => row && typeof row.ID === 'string' &&
+            Object.values(row).every(value => typeof value === 'string')) ||
+        !table.rows.some(row => /^PHASE\s+[A-Z]\b/i.test(row.ID))) {
+        throw new Error('Expected an intra-op table with phase headings and the six original columns.');
+    }
+    return data;
+}
 
+function render(data) {
+    validateData(data);
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const head = document.createElement('tr');
+    thead.append(head);
+    table.append(thead);
+    headers.forEach((header, i) => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        th.scope = 'col';
+        th.className = ['id', 'context', 'descr', 'type', 'reqd', 'notes'][i];
+        head.append(th);
+    });
+    const body = document.createElement('tbody');
+    table.append(body);
+    let phase = '';
+    const availablePhases = new Map();
+    data.tables[0].rows.forEach(row => {
+        const id = row.ID.trim();
+        const heading = id.match(/^PHASE\s+([A-Z])\b/i);
+        const item = id.match(/^([A-Z])-([AMCS])\d+/i);
+        if (heading) {
+            phase = heading[1].toUpperCase();
+            availablePhases.set(phase, id);
+        }
+        const tr = document.createElement('tr');
+        body.append(tr);
+        tr.dataset.phase = item ? item[1].toUpperCase() : phase;
+        const type = item ? types[item[2].toUpperCase()] : '';
+        tr.dataset.type = heading ? '' : (type || 'alert');
+        tr.className = heading ? 'phase' : (type || 'yellow');
+        if (heading || !item) {
+            const td = document.createElement('td');
+            tr.append(td);
+            td.colSpan = headers.length;
+            td.textContent = id;
+        } else {
+            headers.forEach((header, i) => {
+                const td = document.createElement('td');
+                tr.append(td);
+                td.textContent = row[header] || '';
+                if ([2, 4, 5].includes(i)) td.className = 'detail-text';
+                if ([0, 1, 3].includes(i)) td.style.fontWeight = 'bold';
+            });
+        }
+    });
+    const phaseChoices = document.querySelector('#phase-choices');
+    phaseChoices.replaceChildren();
+    availablePhases.forEach((title, letter) => {
+        const label = document.createElement('label');
+        label.title = title;
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.checked = true;
+        input.dataset.phase = letter;
+        label.append(input, ` ${letter}`);
+        phaseChoices.append(label);
 
+    });
+    container.replaceChildren(table);
+    applyFilters();
+}
 
+document.querySelector('#filters').addEventListener('change', applyFilters);
+document.querySelector('#all-phases').addEventListener('click', () => {
+    document.querySelectorAll('input[data-phase]').forEach(input => { input.checked = true; });
+    applyFilters();
+});
 
-
-
+const initialLoad = window.loadIntraopSource().then(({ data, filename }) => {
+    render(data);
+    document.querySelector('h3').textContent = filename;
+}).catch(error => { status.textContent = error.message; });
