@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="minimal-table.css" >
-    <link rel="stylesheet" type="text/css" href="minimal-inputs.css" >
-    <title>Intra-op</title>
-    <button class='primary' id='toggleRows' onclick="toggleRows">Row toggle</button>
-    <button id='toggleA' onclick="toggleA">A toggle</button>
-    <button id='toggleM' onclick="toggleM">M toggle</button>
-    <button id='toggleC' onclick="toggleC">C toggle</button>
-    <button id='toggleS' onclick="toggleS">S toggle</button>
-    <button class='primary' id='togglePhA' onclick="togglePhA">A</button>
-    <button class='primary' id='togglePhB' onclick="togglePhB">B</button>
-    <button class='primary' id='togglePhC' onclick="togglePhC">C</button>
-    <button class='primary' id='togglePhD' onclick="togglePhD">D</button>
-    <button class='primary' id='togglePhE' onclick="togglePhE">E</button>
-    <button class='primary' id='togglePhF' onclick="togglePhF">F</button>
-    <button class='primary' id='togglePhG' onclick="togglePhG">G</button>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="minimal-table.css">
+    <title>Intra-op</title>
   </head>
   <body>
-    <h3>T53 Intra-op Script v12-1</h3>
+    <div id="filters">
+      <fieldset>
+        <legend>Phases</legend>
+        <span id="phase-choices"></span>
+        <button type="button" id="all-phases">All phases</button>
+
+      </fieldset>
+      <fieldset>
+        <legend>Types</legend>
+        <label><input type="checkbox" data-type="check" checked> Checks</label>
+        <label><input type="checkbox" data-type="milestone" checked> Milestones</label>
+        <label><input type="checkbox" data-type="step" checked> Steps</label>
+        <label><input type="checkbox" data-type="alert" checked> Alerts</label>
+        <label><input type="checkbox" id="details" checked> Show details</label>
+      </fieldset>
+    </div>
+    <p id="status" role="status"></p>
+    <h3>Intra-op</h3>
     <div id="table-container"></div>
-    <script type="application/javascript" src='js/set-up-table.js'></script>
+    <script src="js/import-document.js?v=4"></script>
+    <script src="js/set-up-table.js?v=4"></script>
   </body>
 </html>

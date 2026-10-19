@@ -98,3 +98,16 @@ th, td {
 
 
 
+
+[hidden] { display: none !important; }
+thead { background: #2c4d76; color: white; }
+table { width: 100%; }
+fieldset { border: 1px solid #ccc; margin-bottom: .6em; padding: .6em; }
+#filters label { display: inline-block; margin: .3em .7em .3em 0; }
+button, select { padding: .3em .5em; }
+summary { cursor: pointer; }
+#import-menu p { max-width: 75em; }
+#table-container { overflow-x: auto; }
+.compact .detail-text { visibility: hidden; font-size: 0; padding: 0; }
+.compact .context { width: 45%; }
+.compact .descr, .compact .reqd, .compact .notes { width: 1%; }
